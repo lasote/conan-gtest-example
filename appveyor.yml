@@ -12,8 +12,8 @@ install:
 build_script:
   - cmd: conan install
   - cmd: mkdir build && cd build 
-  - cmd: cmake ../ -DBUILD_TEST=TRUE 
-  - cmd: cmake --build .
+  - cmd: cmake ../ -DBUILD_TEST=TRUE  -G "Visual Studio 12 2013 Win64"
+  - cmd: cmake --build . --config Release
 
 test_script:
   - cmd: ./bin/encryption_test.exe
