@@ -7,8 +7,7 @@ install:
 - sudo dpkg -i conan.deb
 - rm conan.deb
 # Automatic detection of your arch, compiler, etc
-- conan install
-- cd test && conan install
+- conan install --build missing
   
 script:
 - mkdir build
