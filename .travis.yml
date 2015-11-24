@@ -3,10 +3,10 @@ compiler:
 - gcc
 install:
 # Upgrade GCC
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-sudo apt-get update -qq
-if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.9; fi
-if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.9"; fi
+- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+- sudo apt-get update -qq
+- if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.9; fi
+- if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.9"; fi
 
 # Download conan (REPLACE WITH LATEST VERSION LINK!)
 - wget https://s3-eu-west-1.amazonaws.com/conanio/downloads/conan-ubuntu-64_0_3_0.deb -O conan.deb
