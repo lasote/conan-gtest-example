@@ -1,5 +1,6 @@
 [requires]
 OpenSSL/1.0.2d@lasote/stable
+gtest/1.7.0@lasote/stable
 
 [generators]
 cmake
