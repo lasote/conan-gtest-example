@@ -2,8 +2,8 @@ version: 1.0.{build}
 
 install:
   - cmd: echo "Downloading conan..."
-  - ps: wget https://s3-eu-west-1.amazonaws.com/conanio/downloads/conan-win_0_3_0.exe -OutFile conan.exe
-  - cmd: conan.exe /VERYSILENT
+  - ps: wget https://s3-eu-west-1.amazonaws.com/conanio/downloads/conan-win_0_3_0.exe -OutFile conan_installer.exe
+  - cmd: conan_installer.exe /VERYSILENT
   - cmd: conan --version
 
 build_script:
