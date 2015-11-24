@@ -17,4 +17,5 @@ build_script:
   - cmd: cmake --build . --config Release
 
 test_script:
-  - cmd: ./bin/encryption_test.exe
+  - cmd: cd bin
+  - cmd: encryption_test.exe
