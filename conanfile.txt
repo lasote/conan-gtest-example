@@ -6,5 +6,5 @@ gtest/1.7.0@lasote/stable
 cmake
 
 [imports]
-bin, *.dll -> ./build/bin # Copies all dll files from packages bin folder to my "bin" folder
-lib, *.dylib* -> ./build/bin # Copies all dylib files from packages lib folder to my "bin" folder
+bin, *.dll -> ./build/bin
+lib, *.dylib* -> ./build/bin
