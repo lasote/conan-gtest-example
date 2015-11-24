@@ -16,7 +16,6 @@ install:
 
 # Automatic detection of your arch, compiler, etc
 - conan install
-- cat conanbuildinfo.cmake
   
 script:
 - mkdir build

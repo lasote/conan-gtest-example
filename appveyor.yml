@@ -1,0 +1,16 @@
+version: 1.0.{build}
+
+install:
+  - cmd: echo "Downloading conan..."
+  - ps: wget https://s3-eu-west-1.amazonaws.com/conanio/downloads/conan-win_0_3_0.exe -OutFile conan.exe
+  - cmd: conan.exe /VERYSILENT
+  - cmd: conan --version
+
+before_build:
+  - cmd: conan install
+
+build_script:
+  - cmd: mkdir build && cd build && cmake ../ -DBUILD_TEST=TRUE && cmake --build .
+
+test_script:
+  - cmd: ./bin/encryption_test.exe
