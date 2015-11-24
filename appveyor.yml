@@ -1,4 +1,7 @@
 version: 1.0.{build}
+platform:
+  - x86
+  - Any CPU
 
 install:
   - cmd: echo "Downloading conan..."
