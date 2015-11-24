@@ -1,0 +1,5 @@
+[requires]
+gtest/1.7.0@lasote/stable
+
+[generators]
+cmake
