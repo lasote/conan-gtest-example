@@ -1,5 +1,5 @@
 [requires]
-OpenSSL/1.0.2d@lasote/stable
+OpenSSL/1.0.2i@lasote/stable
 gtest/1.7.0@lasote/stable
 
 [generators]
