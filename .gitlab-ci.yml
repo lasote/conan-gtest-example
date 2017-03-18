@@ -1,0 +1,14 @@
+# Use Ubuntu 16.04 with gcc-6.3 support
+image: lasote/conangcc63
+
+build:
+  # Upgrade Conan version
+  before_script:
+    - sudo pip install --upgrade conan
+  script:
+    # Automatic detection of your arch, compiler, etc. Download dependencies
+    - conan install
+    # Build GTest and GMock
+    - mkdir build
+    - cd build && cmake ../ -DBUILD_TEST=TRUE && cmake --build .
+    - ./bin/encryption_test
