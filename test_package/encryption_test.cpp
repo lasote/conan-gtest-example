@@ -1,7 +1,7 @@
 // SOURCE CODE FROM https://wiki.openssl.org/index.php/EVP_Symmetric_Encryption_and_Decryption
 
 #include <gtest/gtest.h>
-#include "../encrypter.h"
+#include "encrypter.h"
 
 TEST(TestingEncryption, cipher) {
 
@@ -48,3 +48,4 @@ TEST(TestingEncryption, cipher) {
 	  EVP_cleanup();
 	  ERR_free_strings();
 }
+

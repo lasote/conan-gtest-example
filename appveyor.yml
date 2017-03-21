@@ -1,21 +1,14 @@
-version: 1.0.{build}
-platform:
-  - x64
+build: false
+platform: x86
+environment:
+    PYTHON: "C:\\Python27"
+    PYTHON_VERSION: "2.7.8"
+    PYTHON_ARCH: "32"
 
 install:
-  - cmd: echo "Downloading conan..."
-  - ps: wget https://s3-eu-west-1.amazonaws.com/conanio/downloads/conan-win_0_3_0.exe -OutFile conan_installer.exe
-  - cmd: conan_installer.exe /VERYSILENT
-  - cmd: set PATH=%PATH%;C:\Program Files (x86)\Conan\conan
-  - cmd: conan --version
-
-build_script:
-  - cmd: mkdir build 
-  - cmd: conan install -o gtest:shared=True
-  - cmd: cd build 
-  - cmd: cmake ../ -DBUILD_TEST=TRUE  -G "Visual Studio 14 2015 Win64"
-  - cmd: cmake --build . --config Release
+  - set PATH=%PATH%;%PYTHON%/Scripts/
+  - pip.exe install conan # Install Conan.io
+  - conan user # It creates the conan data directory
 
 test_script:
-  - cmd: cd bin
-  - cmd: encryption_test.exe
+  - conan test_package

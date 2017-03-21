@@ -2,13 +2,11 @@
 image: lasote/conangcc63
 
 build:
-  # Upgrade Conan version
   before_script:
+    # Upgrade Conan version
     - sudo pip install --upgrade conan
+    # Automatic detection of your arch, compiler, etc.
+    - conan user
   script:
-    # Automatic detection of your arch, compiler, etc. Download dependencies
-    - conan install
-    # Build GTest and GMock
-    - mkdir build
-    - cd build && cmake ../ -DBUILD_TEST=TRUE && cmake --build .
-    - ./bin/encryption_test
+    # Install dependencies, build, test and create package
+    - conan test_package
