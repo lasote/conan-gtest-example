@@ -1,6 +1,8 @@
-[![Build Status](https://travis-ci.org/lasote/conan-gtest-example.svg?branch=master)](https://travis-ci.org/lasote/conan-gtest-example)  [![Build status](https://ci.appveyor.com/api/projects/status/kvx4nmlrt98727mo?svg=true)](https://ci.appveyor.com/project/lasote/conan-gtest-example)
-
 # Conan GTest Example 
+
+[![Build Status](https://travis-ci.org/lasote/conan-gtest-example.svg?branch=master)](https://travis-ci.org/lasote/conan-gtest-example) [![Build status](https://ci.appveyor.com/api/projects/status/kvx4nmlrt98727mo?svg=true)](https://ci.appveyor.com/project/lasote/conan-gtest-example) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+
+## Synopsis
 
 [Conan.io](https://conan.io) example for [gtest](https://github.com/google/googletest/) project
 
@@ -36,3 +38,6 @@ To validate the project package:
     $ cmake ..
     $ cmake --build .
     $ cmake --build . --target test
+
+## License
+[LICENSE](LICENSE)
