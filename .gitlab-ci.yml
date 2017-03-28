@@ -1,0 +1,12 @@
+# Use Ubuntu 16.04 with gcc-6.3 support
+image: lasote/conangcc63
+
+build:
+  before_script:
+    # Upgrade Conan version
+    - sudo pip install --upgrade conan
+    # Automatic detection of your arch, compiler, etc.
+    - conan user
+  script:
+    # Install dependencies, build, test and create package
+    - conan test_package

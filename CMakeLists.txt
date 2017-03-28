@@ -1,15 +1,14 @@
-PROJECT(MyTestingExample)
-cmake_minimum_required(VERSION 2.8)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(encrypter CXX)
 
-include(conanbuildinfo.cmake)
+# Initialize Conan #############################################################
+INCLUDE(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 CONAN_BASIC_SETUP()
 
-OPTION(BUILD_TEST "Build the tests" FALSE)
+# Create Encrypter library #####################################################
+ADD_LIBRARY(${CMAKE_PROJECT_NAME} encrypter.cpp)
+TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${CONAN_LIBS})
 
-ADD_LIBRARY(encrypter encrypter.cpp)
-TARGET_LINK_LIBRARIES(encrypter ${CONAN_LIBS})
-
-IF(BUILD_TEST)
-	ADD_EXECUTABLE(encryption_test test/encryption_test.cpp)
-	TARGET_LINK_LIBRARIES(encryption_test encrypter ${CONAN_LIBS})
-ENDIF()
+# Install Encrypter library ####################################################
+INSTALL(TARGETS ${CMAKE_PROJECT_NAME}
+        DESTINATION lib)
