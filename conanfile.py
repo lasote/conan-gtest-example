@@ -3,9 +3,7 @@ from conans import CMake
 
 
 class ConanGTestExample(ConanFile):
-    """Build Conan GTest Example
-
-    """
+    """Build Conan GTest Example"""
     name = "conan-gtest-example"
     version = "0.1.0"
     url = "https://github.com/uilianries/conan-gtest-example"
@@ -15,15 +13,15 @@ class ConanGTestExample(ConanFile):
     generators = "cmake"
     exports = "*"
     description = "Google Test example of use for conan.io"
-    requires = "OpenSSL/1.0.2i@lasote/stable", "gtest/1.7.0@lasote/stable"
+    requires = "OpenSSL/1.0.2l@conan/stable", "gtest/1.7.0@lasote/stable"
     options = {"shared": [True, False]}
     default_options = "gtest:shared=True", "shared=False"
 
     def build(self):
         shared = {"BUILD_SHARED_LIBS": self.options.shared}
-        cmake = CMake(self.settings)
-        cmake.configure(self, defs=shared)
-        cmake.build(self)
+        cmake = CMake(self)
+        cmake.configure(defs=shared)
+        cmake.build()
 
     def package(self):
         self.copy("*.h", dst="include")
