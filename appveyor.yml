@@ -8,7 +8,8 @@ environment:
 install:
   - set PATH=%PATH%;%PYTHON%/Scripts/
   - pip.exe install conan # Install Conan.io
+  - conan --version
   - conan user # It creates the conan data directory
 
 test_script:
-  - conan test_package
+  - conan test_package whatevername/whateverchannel

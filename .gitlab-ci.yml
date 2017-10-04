@@ -5,8 +5,9 @@ build:
   before_script:
     # Upgrade Conan version
     - sudo pip install --upgrade conan
+    - conan --version
     # Automatic detection of your arch, compiler, etc.
     - conan user
   script:
     # Install dependencies, build, test and create package
-    - conan test_package
+    - conan test_package whatevername/whateverchannel
