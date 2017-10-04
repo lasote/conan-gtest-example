@@ -14,5 +14,6 @@ install:
   - conan user
   
 script:
+  - conan install . --build=missing
   # Install dependencies, build, test and create package
   - conan test_package whatevername/whateverchannel
