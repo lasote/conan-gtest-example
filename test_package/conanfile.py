@@ -11,7 +11,7 @@ class TestConanGTestExample(ConanFile):
     settings = "os", "compiler", "arch", "build_type"
     generators = "cmake"
     cmake = None
-    build_requires = "gtest/1.7.0@lasote/stable"
+    requires = "gtest/1.7.0@lasote/stable"
     default_options = "gtest:shared=True"
 
     def build(self):

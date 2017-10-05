@@ -7,7 +7,7 @@
 [Conan.io](https://conan.io) example for [gtest](https://github.com/google/googletest/) project.
 
 The project is using OpenSSL to build an encryption library, and using Google test to ensure that the library is built correctly.
-The Google test library is requires as a **build_require** in the **test_package/conanfile.py**.
+The Google test library is required as a **require** in the **test_package/conanfile.py**.
 
 ## Build
 
