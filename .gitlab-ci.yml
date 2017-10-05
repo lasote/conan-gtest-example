@@ -9,4 +9,4 @@ build:
     - conan user
   script:
     # Install dependencies, build, test and create package
-    - conan test_package
+    - conan create conan/testing --build missing

@@ -4,40 +4,19 @@
 
 ## Synopsis
 
-[Conan.io](https://conan.io) example for [gtest](https://github.com/google/googletest/) project
+[Conan.io](https://conan.io) example for [gtest](https://github.com/google/googletest/) project.
 
-## Build project
+The project is using OpenSSL to build an encryption library, and using Google test to ensure that the library is built correctly.
+The Google test library is requires as a **build_require** in the **test_package/conanfile.py**.
+
+## Build
 
 Download conan client from [Conan.io](https://conan.io) and run:
 
-    $ conan test_package
+    $ conan create user/channel
 
-This command will export, build and test the project  
+The above command will export, build and test a conan package for a custom encryption library.
 
-Or, if you want build only the example
-
-    $ conan export lasote
-    $ conan install conan-gtest-example/0.1.0@lasote/testing --build conan-gtest-example
-
-### CMake
-
-You could use CMake to build the project directly
-
-    $ mkdir build && cd build
-    $ conan install ..
-    $ cmake ..
-    $ cmake --build .
-
-## Test project
-
-To validate the project package:
-
-    $ cd test_package
-    $ mkdir build && cd build
-    $ conan install ..
-    $ cmake ..
-    $ cmake --build .
-    $ cmake --build . --target test
 
 ## License
 [LICENSE](LICENSE)

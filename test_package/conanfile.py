@@ -11,16 +11,18 @@ class TestConanGTestExample(ConanFile):
     settings = "os", "compiler", "arch", "build_type"
     generators = "cmake"
     cmake = None
+    build_requires = "gtest/1.7.0@lasote/stable"
+    default_options = "gtest:shared=True"
 
     def build(self):
         self.cmake = CMake(self)
-        self.cmake.configure(source_dir=self.conanfile_directory, build_dir="./")
+        self.cmake.configure()
         self.cmake.build()
 
     def imports(self):
         self.copy("*.so", "bin", "lib")
         self.copy("*.dll", "bin", "bin")
-        self.copy("*.dylib", "bin", "bin")
+        self.copy("*.dylib", "bin", "lib")
 
     def test(self):
         target_test = "RUN_TESTS" if self.settings.os == "Windows" else "test"
