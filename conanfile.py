@@ -13,7 +13,7 @@ class ConanGTestExample(ConanFile):
     generators = "cmake"
     exports = "*"
     description = "Google Test example of use for conan.io"
-    requires = "OpenSSL/1.0.2l@conan/stable"
+    requires = "OpenSSL/1.0.2o@conan/stable"
     options = {"shared": [True, False]}
     default_options = "shared=False"
 
