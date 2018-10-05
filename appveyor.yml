@@ -11,4 +11,4 @@ install:
   - conan user # It creates the conan data directory
 
 test_script:
-  - conan create conan/testing --build missing
+  - conan create . conan/testing --build missing
