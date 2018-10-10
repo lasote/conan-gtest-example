@@ -1,6 +1,18 @@
-# Conan GTest Example 
+# Conan GTest Example
 
 [![Build Status](https://travis-ci.org/lasote/conan-gtest-example.svg?branch=master)](https://travis-ci.org/lasote/conan-gtest-example) [![Build status](https://ci.appveyor.com/api/projects/status/kvx4nmlrt98727mo?svg=true)](https://ci.appveyor.com/project/lasote/conan-gtest-example) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+
+## Getting Started
+
+* Download conan client from [Conan.io](https://conan.io).
+
+* Run the following command.
+
+```bash
+conan create . user/channel
+```
+
+The above command will export, build and test a conan package for a custom encryption library.
 
 ## Synopsis
 
@@ -14,14 +26,6 @@ so it would be only downloaded when the encryption library has to be built from 
 
 With that approach, the **test_package** project could just run an example using/linking with the encryption library.
 
-## Build
-
-Download conan client from [Conan.io](https://conan.io) and run:
-
-    $ conan create user/channel
-
-The above command will export, build and test a conan package for a custom encryption library.
-
-
 ## License
+
 [LICENSE](LICENSE)
