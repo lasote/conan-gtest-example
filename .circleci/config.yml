@@ -1,0 +1,17 @@
+version: 2
+gcc-6:
+  docker:
+    - image: conanio/gcc6
+  steps:
+    - checkout
+    - run:
+        name: Build Conan package
+        command: |
+          sudo pip install --upgrade conan
+          conan user
+          conan create . user/channel
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+    - gcc-6
